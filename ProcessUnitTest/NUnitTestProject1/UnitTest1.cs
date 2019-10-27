@@ -18,7 +18,7 @@ namespace NUnitTestProject1
             f1.RatedFlow = 10;
             Pump jetpump =new Pump (f1,20);
             Blower blower = new Blower();
-            jetpump.SetTagNumber("P-001");
+            jetpump.SetTagNumber("P-002");
  
          
 

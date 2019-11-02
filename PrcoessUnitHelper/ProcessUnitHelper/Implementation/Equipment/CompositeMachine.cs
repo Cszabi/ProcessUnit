@@ -7,7 +7,7 @@ using Signals;
 
 namespace ProcessUnitHelper.Implementation
 {
-    public abstract class CompositeMachine : BaseEquipment, IMachine, ISignal
+    public abstract class CompositeMachine : BaseEquipment, IMachine
     {
         private List<ElectricalMotor> electricalMotors = new List<ElectricalMotor>();
 
@@ -31,18 +31,6 @@ namespace ProcessUnitHelper.Implementation
         public double ConsumedPower { get; internal set; }
 
         public bool isGenerateVibration { get; internal set; }
-
-        public abstract int DigitalInput { get; set; }
-
-        public abstract int DigitalOutput { get; set; }
-
-        public abstract int AnalogInput { get; set; }
-
-        public abstract int AnalogOutput { get; set; }
-
-        public abstract int PO { get; set; }
-
-        public abstract int PB { get; set; }
 
         public void CalculateInstalledPower()
         {

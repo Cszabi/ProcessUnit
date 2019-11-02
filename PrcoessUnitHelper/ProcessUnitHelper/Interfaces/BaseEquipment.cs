@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Signals;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ProcessUnitHelper
 {
-    abstract public class BaseEquipment
+    abstract public class BaseEquipment : TaggedElement
     {
-        public int EquipmentID {get;}
-        public string TagNumber { get; internal set; }
-        public string Denomination { get; internal set; }
+  
         public double MechanicalEfficiency { get; internal set; }
         public double HydraulicEfficiency { get; internal set; }
         public double ShaftPower { get; internal set; }
@@ -16,14 +15,11 @@ namespace ProcessUnitHelper
         public bool isContinousWorking { get; internal set; }
         public int WorkingHoursinADay { get; private set; }
         public bool isVibratingSensitive { get; internal set; }
-
-        public void SetTagNumber(string tagnumber)
-        {
-            TagNumber = tagnumber;
-        }
-        public void SetDenomination(string denomination)
-        {
-            Denomination = denomination;
-        }
+        public abstract int DigitalInput { get; set; }
+        public abstract int DigitalOutput { get; set; }
+        public abstract int AnalogInput { get; set; }
+        public abstract int AnalogOutput { get; set; }
+        public abstract int PO { get; set; }
+        public abstract int PB { get; set; }
     }
 } 

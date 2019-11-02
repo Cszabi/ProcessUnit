@@ -3,32 +3,28 @@ using System.Collections.Generic;
 using System.Text;
 using InstrumentHelper.Implementation;
 using ProcessUnitHelper.Interfaces;
+using Signals;
 
 namespace ProcessUnitHelper.Implementation
 {
-    public abstract class CompositeMachine : BaseEquipment, IMachine
+    public abstract class CompositeMachine : BaseEquipment, IMachine, ISignal
     {
         private List<ElectricalMotor> electricalMotors = new List<ElectricalMotor>();
 
-        public List<ElectricalMotor> ElectricalMotors
-        {
-            get { return electricalMotors; }
-            set { electricalMotors = value; }
-        }
-        private List<MachineEquipment> equipment = new List<MachineEquipment>();
+        public List<ElectricalMotor> GetElectricalMotors()
+        { return electricalMotors; }
 
-        public List<MachineEquipment> Equipment
-        {
-            get { return equipment; }
-            set { equipment = value; }
-        }
-        //private List<BaseInstrument> instruments = new List<BaseInstrument>();
+        public void SetElectricalMotors(List<ElectricalMotor> value)
+        { electricalMotors = value; }
+
+        public List<IEquipment> Equipment { get; set; } = new List<IEquipment>();
+        private List<BaseInstrument> instruments = new List<BaseInstrument>();
         //public List<BaseInstrument> Instruments { get; private set; }
         //{
         //    get { return instruments; }
         //    set { instruments = value; }
         //}
-        
+
 
         public double InstalledPower { get; internal set ; }
 
@@ -36,11 +32,22 @@ namespace ProcessUnitHelper.Implementation
 
         public bool isGenerateVibration { get; internal set; }
 
+        public abstract int DigitalInput { get; set; }
 
-    public void CalculateInstalledPower()
+        public abstract int DigitalOutput { get; set; }
+
+        public abstract int AnalogInput { get; set; }
+
+        public abstract int AnalogOutput { get; set; }
+
+        public abstract int PO { get; set; }
+
+        public abstract int PB { get; set; }
+
+        public void CalculateInstalledPower()
         {
             InstalledPower = 0d;
-            foreach (var motor in ElectricalMotors)
+            foreach (var motor in GetElectricalMotors())
             {
                 InstalledPower = InstalledPower + motor.InstalledPower;
             }
@@ -48,7 +55,7 @@ namespace ProcessUnitHelper.Implementation
         public void CalculateConsumedPower()
         {
             ConsumedPower = 0d;
-            foreach (var motor in ElectricalMotors)
+            foreach (var motor in GetElectricalMotors())
             {
                 ConsumedPower = ConsumedPower + motor.ConsumedPower;
             }

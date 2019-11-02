@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Signals;
 
 namespace InstrumentHelper.Implementation
 {
-    public  abstract class  BaseInstrument
+    public abstract class BaseInstrument : ISignal
     {
-        int AI { get; set; }
-        int AO { get; set; }
-        int DI { get; set; }
-        int DO { get; set; }
-        int PO { get; set; }
-        int PB { get; set; }
+        public abstract int DigitalInput { get; set; }
+        public abstract int DigitalOutput { get; set; }
+        public abstract int AnalogInput { get; set; }
+        public abstract int AnalogOutput { get; set; }
+        public abstract int PO { get; set; }
+        public abstract int PB { get; set; }
+        string MeasuredSignal { get; set; }
+        
 
     }
 }

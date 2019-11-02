@@ -1,5 +1,6 @@
 ﻿using ProcessUnitHelper.Enums;
 using ProcessUnitHelper.Interfaces;
+using Signals;
 using System;
 using System.Collections.Generic;
 using System.Text;

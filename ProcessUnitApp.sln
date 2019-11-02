@@ -20,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PipeHelper", "PipeHelper\Pi
 		{6BD6DEC6-E76C-44A6-A3EC-2248E5A314A3} = {6BD6DEC6-E76C-44A6-A3EC-2248E5A314A3}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstrumentHelper", "InstrumentHelper\InstrumentHelper.csproj", "{117AC8D7-90FC-4F25-8340-D70F212AB55B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstrumentHelper", "InstrumentHelper\InstrumentHelper.csproj", "{117AC8D7-90FC-4F25-8340-D70F212AB55B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signals", "Signals\Signals.csproj", "{8959ED3E-2115-4944-943E-D01C8ADE54F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 		{117AC8D7-90FC-4F25-8340-D70F212AB55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{117AC8D7-90FC-4F25-8340-D70F212AB55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{117AC8D7-90FC-4F25-8340-D70F212AB55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8959ED3E-2115-4944-943E-D01C8ADE54F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8959ED3E-2115-4944-943E-D01C8ADE54F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8959ED3E-2115-4944-943E-D01C8ADE54F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8959ED3E-2115-4944-943E-D01C8ADE54F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

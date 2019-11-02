@@ -19,11 +19,17 @@ namespace ProcessUnitHelper
             MechanicalEfficiency = 0.85d;
             var emotor = new ElectricalMotor(ShaftPower);
             emotor.WorkingHours = 24;
-            emotor.InstalledPower = 10;
-            ElectricalMotors.Add(emotor);
+            GetElectricalMotors().Add(emotor);
         }
+
         public Flow Flow { get; private set; }
         public double Head { get; private set; }
+        public override int DigitalInput { get; set; } = 0;
+        public override int DigitalOutput { get; set; } = 0;
+        public override int AnalogInput { get; set; } = 0;
+        public override int AnalogOutput { get; set; } = 0;
+        public override int PO { get; set; } = 0;
+        public override int PB { get; set; } = 0;
 
         public void CalculateShaftPower()
         {

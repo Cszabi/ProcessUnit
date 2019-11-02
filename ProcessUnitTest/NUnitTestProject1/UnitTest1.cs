@@ -19,14 +19,14 @@ namespace NUnitTestProject1
             Pump jetpump =new Pump (f1,20);
             Blower blower = new Blower();
             jetpump.SetTagNumber("P-002");
+            jetpump.SetDenomination("Jetpump for equalization tank");
  
          
 
-            Assert.AreEqual("P-001", jetpump.TagNumber);
-
+            Assert.AreEqual("P-002", jetpump.TagNumber);
+            Assert.AreEqual(0, jetpump.DigitalInput);
             Assert.AreEqual(true, jetpump.isWorking);
-
-
+            Assert.AreEqual("Jetpump for equalization tank", jetpump.Denomination);
 
         }
     }

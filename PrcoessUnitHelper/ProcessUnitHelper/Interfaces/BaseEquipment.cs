@@ -21,6 +21,9 @@ namespace ProcessUnitHelper
         {
             TagNumber = tagnumber;
         }
-
+        public void SetDenomination(string denomination)
+        {
+            Denomination = denomination;
+        }
     }
 } 

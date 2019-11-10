@@ -13,7 +13,7 @@ namespace ProcessUnitHelper.Enums
             StandardMotors.Add(3.7);
             StandardMotors.Add(5);
             StandardMotors.Add(10);
-            StandardMotors.Add(100000);
+            StandardMotors.Add(250);
             StandardMotors.Sort();
         }
         public double SelectStandardMotor(double requiredpower)

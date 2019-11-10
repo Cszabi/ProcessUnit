@@ -17,9 +17,12 @@ namespace ProcessUnitHelper
             isWorking = true;
             HydraulicEfficiency = 0.95d;
             MechanicalEfficiency = 0.85d;
+            CalculateShaftPower();
             var emotor = new ElectricalMotor(ShaftPower);
             emotor.WorkingHours = 24;
             GetElectricalMotors().Add(emotor);
+            CalculateInstalledPower();
+            CalculateConsumedPower();
         }
 
         public Flow Flow { get; private set; }

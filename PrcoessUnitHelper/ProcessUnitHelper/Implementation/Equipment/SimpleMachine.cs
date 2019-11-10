@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProcessUnitHelper.Implementation.Equipment
 {
-    public class SimpleMachine : BaseEquipment, IMachine
+    public abstract class SimpleMachine : BaseEquipment, IMachine
     {
 
         public bool isGenerateVibration { get; } = false;
@@ -32,5 +32,6 @@ namespace ProcessUnitHelper.Implementation.Equipment
         {
             InstalledPower = ElectricalMotor.InstalledPower;
         }
+
     }
 }

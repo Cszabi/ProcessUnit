@@ -10,11 +10,13 @@ namespace ProcessUnitHelper.Implementation
     public class ElectricalMotor : ElectricalConsumer
     {
         private StandardMotorPower StdMotorPower { get; set; }
+        
+        public double InstalledPower {get;set;}
        
         public ElectricalMotor(double requiredpower)
         {
             StdMotorPower = new StandardMotorPower();
-            StdMotorPower.SelectStandardMotor(requiredpower);
+            InstalledPower =StdMotorPower.SelectStandardMotor(requiredpower);
         }
     }
 }

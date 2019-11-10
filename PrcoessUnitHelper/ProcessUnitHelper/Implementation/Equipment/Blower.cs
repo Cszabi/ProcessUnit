@@ -32,10 +32,14 @@ namespace ProcessUnitHelper
         
         public override int PB { get; set; } = 0;
 
-        public Blower()
+        public Blower(double dischargepressure, double suctionpressure, Flow flow)
         {
             //default values set
             Denomination = "Blower";
+            Flow = flow;
+            SuctionPressure = suctionpressure;
+            DischargePressure = dischargepressure;
+
             isContinousWorking = true;
             isContinousWorking = true;
             isVibratingSensitive = false;
@@ -43,6 +47,12 @@ namespace ProcessUnitHelper
             isWorking = true;
             HydraulicEfficiency = 0.95d;
             MechanicalEfficiency = 0.8d;
+            CalculateShaftPower();
+            var emotor = new ElectricalMotor(ShaftPower);
+            emotor.WorkingHours = 24;
+            GetElectricalMotors().Add(emotor);
+            CalculateInstalledPower();
+            CalculateConsumedPower();
         }
 
 

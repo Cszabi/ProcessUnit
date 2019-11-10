@@ -10,12 +10,12 @@ namespace ProcessUnitHelper.Implementation.Equipment
 
         public bool isGenerateVibration { get; } = false;
 
-        public override int DigitalInput { get; set; } = 0;
-        public override int DigitalOutput { get; set; } = 0;
-        public override int AnalogInput { get; set; } = 0;
-        public override int AnalogOutput { get; set; } = 0;
-        public override int PO { get; set; } = 0;
-        public override int PB { get; set; } = 0;
+        public  int DigitalInput { get; set; } = 0;
+        public  int DigitalOutput { get; set; } = 0;
+        public  int AnalogInput { get; set; } = 0;
+        public  int AnalogOutput { get; set; } = 0;
+        public  int PO { get; set; } = 0;
+        public int PB { get; set; } = 0;
 
         public ElectricalMotor ElectricalMotor { get; internal set; }
 

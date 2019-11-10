@@ -23,6 +23,12 @@ namespace ProcessUnitHelper
         public double ConsumedPower { get; private set; }
 
         public bool isGenerateVibration { get; private set; }
+        public int DigitalInput { get ; set; }
+        public int DigitalOutput { get; set; }
+        public int AnalogInput { get; set; }
+        public int AnalogOutput { get; set; }
+        public int PO { get; set; }
+        public int PB { get; set; }
 
         public void AddEquipment(BaseEquipment equipment)
         {

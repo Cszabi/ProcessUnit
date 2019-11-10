@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProcessUnitHelper
 {
-    interface IMachine
+    interface IMachine : ISignal
     {
         double InstalledPower { get; }
         double ConsumedPower { get; }
